@@ -94,6 +94,35 @@ A JSON file which specifies rules of a blockchain, some fields are optional whic
   + `"nodePermissionContract"` Address of the smart contract that sets nodes' interconnection permissions. Used for [advanced permssioning Networks](https://wiki.parity.io/Permissioning#how-it-works).
   + `"transactionPermissionContract"` Address of the smart contract that sets the transaction type permissions for network participants. Used for [Advanced permissioning Networks](https://wiki.parity.io/Permissioning#transaction-type).
   + `"maxTransactionSize"` Maximum size of a transaction RLP payload. (Default `300*1024`).
+  + `"eip150Transition"` EIP150 transition block number.
+  + `"eip160Transition"` EIP160 transition block number.
+  + `"eip161abcTransition"` [EIP161 a,b,c](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-161.md#specification) transition block number.
+  + `"eip161dTransition"` [EIP161 d](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-161.md#specification) transition block number.
+  + `"eip98Transition"` EIP98 transition block number.
+  + `"eip658Transition"` EIP658 transition block number.
+  + `"eip155Transition"` EIP155 transition block number.
+  + `validateReceiptsTransition` Allow inconsistencies in receipts until this block number.   **<-- Please double check**
+  + `validateChainIdTransition` Validate transaction chain id transition block number.        **<-- Need to explain better**
+  + `"eip155Transition"` EIP155 transition block number.
+  + `"eip86Transition"` EIP-86 (Metropolis) transition block number.
+  + `"eip140Transition"` EIP-140 (Metropolis: REVERT opcode) transition block number.
+  + `"eip210Transition"` EIP-210 (Metropolis: BLOCKHASH changes) transition block number.
+  + `"eip210ContractAddress"` EIP-210 Blockhash contract address.
+  + `"eip210ContractCode"` - Bytes - EIP-210 Blockhash contract code.
+  + `"eip210ContractGas"` - U256 - Gas allocated for EIP-210 blockhash update.
+  + `"eip211Transition"` Gas allocated for EIP-210 blockhash update transition block number.
+  + `"eip214Transition"` EIP214 transition block number.
+  + `"eip145Transition"` EIP145 transition block number.
+  + `"dustProtectionTransition"` Dust cleanup (EIP-168 and EIP169) transition block number.
+  + `"nonceCapIncrement"` - U64 - Nonce cap increase per block. Nonce cap is only checked if dust protection is enabled..
+  + `"removeDustContracts"` - bool - Enable dust cleanup for contracts.
+  + `"gasLimitBoundDivisor"` EIP145 transition block number.
+  + `"eip145Transition"` - U256 - Maximum gas increment per block.                            **<-- Please double check**
+  + `"registrar"` Registrar contract address.
+  + `"maxCodeSize"` - U64 - Maximum contract code size that can be deployed in a transaction.
+  + `"maxCodeSizeTransition"` transition block number for `maxCodeSize` .
+
+
 
 + **`"accounts"`** contains optional contents of the genesis block, such as simple accounts with balances or contracts. Parity does not include the standard Ethereum builtin contracts by default. These are necessary when writing new contracts in Solidity since compiled Solidity often refers to them. To make the chain behave like the public Ethereum chain the 4 contracts need to be included in the spec file, as shown in the example below:
 
