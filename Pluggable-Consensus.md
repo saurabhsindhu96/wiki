@@ -101,24 +101,25 @@ Simple and fast consensus algorithm, each validator gets an assigned time slot i
 
 `"stepDuration"` determines the lowest interval between blocks in seconds, too low might cause reorgs if the system clocks are not synchronized, too high leads to slow block issuance
 
-`"validators"` 
-- `"list`" is the list of addresses of the entities which will be allowed to issue blocks
-- `"safeContract`" Address of a contract that indicates the list of authorities.
-- `"contract`" Address of a contract that indicates the list of authorities and enables reporting of theor misbehaviour using transactions. **<-- Double check what "theor misbehaviour using transactions" means**
-- `"multi`" A map of starting blocks for each validator set (see example above).
-- 
+- `"validators"` 
+  - `"list`" is the list of addresses of the entities which will be allowed to issue blocks
+  - `"safeContract`" Address of a contract that indicates the list of authorities.
+  - `"contract`" Address of a contract that indicates the list of authorities and enables reporting of theor misbehaviour using transactions. **<-- Double check what "theor misbehaviour using transactions" means**
+  - `"multi`" A map of starting blocks for each validator set (see example above).
+ 
 Optional:
 
-`"blockReward"` determines the reward given to issuing authority (in Wei).
-`"validateScoreTransition"` Block at which score validation should start **<-- Explain better**
-`"validateStepTransition"` Block from which monotonic steps start. **<-- Explain better**
-`"immediateTransitions"` - bool - Whether transitions should be immediate or not **<-- Explain better**
-`"blockRewardContractTransition"` Block at which the block reward contract should start being used.
-`"blockRewardContractAddress"` Block reward contract address, setting the block reward contract. This option overrides the static block reward definition.
-`"maximumUncleCountTransition"` Block at which maximum uncle count should be considered.
-`"maximumUncleCount"` Maximum number of accepted uncles.
-`"emptyStepsTransition"` Block at which empty step messages should start.
-`"maximumEmptySteps"` Maximum number of accepted empty steps.
+- `"blockReward"` determines the reward given to issuing authority (in Wei).
+- `"validateScoreTransition"` Block at which score validation should start **<-- Need to explain better**
+- `"validateStepTransition"` Block from which monotonic steps start. **<-- Need to explain better**
+- `"immediateTransitions"` - bool - Whether transitions should be immediate or not **<-- Need to explain better**
+- `"blockRewardContractTransition"` Block at which the block reward contract should start being used.
+- `"blockRewardContractAddress"` Block reward contract address, setting the block reward contract. This option overrides the static block reward definition.
+- `"maximumUncleCountTransition"` Block at which maximum uncle count should be considered.
+- `"maximumUncleCount"` Maximum number of accepted uncles.
+- `"emptyStepsTransition"` Block at which empty step messages should start.
+- `"maximumEmptySteps"` Maximum number of accepted empty steps.
+
 
 ```json
 "seal": {
