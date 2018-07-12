@@ -106,16 +106,16 @@ A JSON file which specifies rules of a blockchain, some fields are optional whic
   + `"eip86Transition"` [EIP-86](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-86.md) (Metropolis) transition block number.
   + `"eip140Transition"` [EIP-140](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-140.md) (Metropolis: REVERT opcode) transition block number.
   + `"eip210Transition"` [EIP-210](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-210.md) (Metropolis: BLOCKHASH changes) transition block number.
-  + `"eip210ContractAddress"` EIP-210 Blockhash contract address.
-  + `"eip210ContractCode"` - Bytes - EIP-210 Blockhash contract code.
+  + `"eip210ContractAddress"` [EIP-210](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-210.md) Blockhash contract address.
+  + `"eip210ContractCode"` - Bytes - [EIP-210](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-210.md) Blockhash contract code.
   + `"eip210ContractGas"` - U256 - Gas allocated for EIP-210 blockhash update.
-  + `"eip211Transition"` Gas allocated for EIP-210 blockhash update transition block number.
+  + `"eip211Transition"` Gas allocated for [EIP-210](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-210.md) blockhash update transition block number.
   + `"eip214Transition"` [EIP214](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-214.md) transition block number.
   + `"eip145Transition"` [EIP145](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-145.md) transition block number.
   + `"dustProtectionTransition"` Dust cleanup (EIP-168 and EIP169) transition block number.
   + `"nonceCapIncrement"` - U64 - Nonce cap increase per block. Nonce cap is only checked if dust protection is enabled..
   + `"removeDustContracts"` - bool - Enable dust cleanup for contracts.
-  + `"gasLimitBoundDivisor"` U256 - Maximum gas increment per block. **<-- Please double check**                          
+  + `"gasLimitBoundDivisor"` U256 - Gas limit changes from block to block within limits set by `current_gas_limit*(1 ± 1/gasLimitBoundDivisor)` depending on [`--gas-floor-target`]https://wiki.parity.io/Configuring-Parity  **<-- Please double check/rephrase**                          
   + `"registrar"` Registrar contract address.
   + `"maxCodeSize"` - U64 - Maximum contract code size that can be deployed in a transaction.
   + `"maxCodeSizeTransition"` transition block number for `maxCodeSize` .
